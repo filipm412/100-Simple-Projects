@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Color Change</title>
+    <style>
+        body {
+            width: 100vh;
+            height: 98vh;
+            background-color: #01bbd4;
+        }
+        button {
+            position: absolute;
+            top: 50%;
+            left: 45%;
+            width: 100px;
+            height: 50px;
+            background-color: transparent;
+            border: 0.5px black solid ;
+            font-size: 18px;
+        }
+        button:hover {
+            cursor: pointer;
+        }
+        button:focus {
+            outline-style: none;
+        }
+    </style>
+</head>
+<body id="body">
+    <button id="button">Click Me!</button>
+    <script>
+        let button = document.getElementById("button");
+        let background = document.getElementById("body");
+        let arrayOfColors = ["#f34135", "#9b27b0", "#4baf4f", "#785446", "#feea3b"];
+
+        button.addEventListener("click", function() {
+
+          background.style.backgroundColor = arrayOfColors [Math.floor(Math.random() * arrayOfColors.length)];
+            
+        });
+    </script>
+</body>
+</html>
