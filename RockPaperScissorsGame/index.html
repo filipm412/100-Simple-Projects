@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock, Paper, Scissors</title>
+</head>
+<body>
+
+
+    <button id="rock">Rock</button>
+    <button id="paper">Paper</button>
+    <button id="scissors">Scissors</button>
+    <div id="computerPlay"></div>
+    <div id="answer"></div>
+
+    <script>
+
+
+        let rock = document.getElementById("rock");
+        let paper = document.getElementById("paper");
+        let scissors = document.getElementById("scissors");
+        let answer = document.getElementById("answer");
+        let computerPlay = document.getElementById("computerPlay");
+
+
+        function respond () {
+
+            var computerRespond = ["Rock", "Paper", "Scissors"];
+
+            return computerRespond[Math.floor(Math.random() * computerRespond.length)];
+         }
+
+        
+        /**************************ROCK**************************************/
+
+        rock.addEventListener("click", function() {
+
+
+            if (respond() == "Rock") {
+                computerPlay.innerHTML = "Rock";
+                answer.innerHTML = "It's a tie.";
+
+
+            }
+
+            else if (respond() == "Paper") {
+                computerPlay.innerHTML = "Paper";
+                answer.innerHTML = "You lose";
+            }
+
+            else {
+                
+                computerPlay.innerHTML = "Scissors";
+                answer.innerHTML = "You win";
+            }
+
+        });
+
+
+
+        /**************************PAPER**************************************/
+
+
+        paper.addEventListener("click", function() {
+
+
+
+        if (respond() == "Paper") {
+            computerPlay.innerHTML = "Paper";
+            answer.innerHTML = "It's a tie.";
+
+
+        }
+
+        else if (respond() == "Scissors") {
+            computerPlay.innerHTML = "Scissors";
+            answer.innerHTML = "You lose";
+        }
+
+        else {
+            
+            computerPlay.innerHTML = "Rock";
+            answer.innerHTML = "You win";
+        }
+
+        });
+
+
+
+
+
+
+        /**************************SCISSORS**************************************/
+
+
+        scissors.addEventListener("click", function() {
+
+
+
+        if (respond() == "Scissors") {
+            computerPlay.innerHTML = "Scissors";
+            answer.innerHTML = "It's a tie.";
+
+
+        }
+
+        else if (respond() == "Rock") {
+            computerPlay.innerHTML = "Rock";
+            answer.innerHTML = "You lose";
+        }
+
+        else {
+            
+            computerPlay.innerHTML = "Paper";
+            answer.innerHTML = "You win";
+        }
+
+        });
+    </script>
+</body>
+</html>
